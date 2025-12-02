@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870230424594",
+    "project_id": "escdiary-app",
+    "storage_bucket": "escdiary-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870230424594:android:041ea9e38c07018a7a2ccb",
+        "android_client_info": {
+          "package_name": "com.escdiary.escdiary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGYFPvTLENsh67kA4kLOuAw34RIylC-jE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
