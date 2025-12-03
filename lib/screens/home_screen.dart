@@ -33,7 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('방탈출 다이어리'),
+        title: Image.asset(
+          'assets/images/logo.png',
+          height: 36,
+        ),
+        centerTitle: false,
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
