@@ -1,7 +1,7 @@
 name: escdiary
 description: "Escape Room Diary - Personal escape room game record keeper"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.2+3
 
 environment:
   sdk: ^3.9.0
@@ -26,6 +26,7 @@ dependencies:
   firebase_core: ^4.2.1
   firebase_analytics: ^12.0.4
   upgrader: ^12.3.0
+  package_info_plus: ^9.0.0
 
 dev_dependencies:
   flutter_test:

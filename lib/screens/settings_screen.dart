@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../providers/theme_provider.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  String _version = '';
+  String _buildNumber = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPackageInfo();
+  }
+
+  Future<void> _loadPackageInfo() async {
+    final packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      _version = packageInfo.version;
+      _buildNumber = packageInfo.buildNumber;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +52,10 @@ class SettingsScreen extends StatelessWidget {
 
           // 앱 정보
           _buildSectionHeader(context, '정보'),
-          const ListTile(
-            leading: Icon(Icons.info_outline),
-            title: Text('앱 버전'),
-            subtitle: Text('1.0.0'),
+          ListTile(
+            leading: const Icon(Icons.info_outline),
+            title: const Text('앱 버전'),
+            subtitle: Text(_version.isNotEmpty ? '$_version ($_buildNumber)' : '로딩 중...'),
           ),
           const ListTile(
             leading: Icon(Icons.lock_outline),
